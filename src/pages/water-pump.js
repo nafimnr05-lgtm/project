@@ -37,11 +37,16 @@ export async function renderWaterPumpDashboard(project) {
     </div>
 
     <div class="container">
+      <div class="actions" style="margin-bottom: 1.5rem;">
+        <button class="btn btn-secondary" onclick="window.router.navigate('/projects')">← Back to Projects</button>
+        <button class="btn btn-primary" onclick="window.router.navigate('/project/telemetry?id=${project.project_id}')">View All Telemetry</button>
+      </div>
+
       <div class="page-header">
         <h1 class="page-title">${project.project_name}</h1>
         <p class="page-description">
           <span class="badge badge-info">Water Pump</span>
-          Project ID: ${project.project_id}
+          Project ID: ${project.project_id} | ${telemetryCount || 0} total samples
         </p>
       </div>
 
@@ -86,9 +91,6 @@ export async function renderWaterPumpDashboard(project) {
         `}
       </div>
 
-      <div class="actions">
-        <button class="btn btn-secondary" onclick="window.router.navigate('/projects')">Back to Projects</button>
-      </div>
     </div>
   `;
 

@@ -5,6 +5,7 @@ import { renderDeviceList, renderDeviceEdit } from './pages/devices.js';
 import { renderProjectList } from './pages/projects.js';
 import { renderProjectDetail } from './pages/project-detail.js';
 import { renderDeviceTelemetry } from './pages/device-telemetry.js';
+import { renderProjectTelemetry } from './pages/project-telemetry.js';
 
 window.router = router;
 
@@ -15,5 +16,6 @@ router.register('/device/edit', renderDeviceEdit);
 router.register('/device/telemetry', renderDeviceTelemetry);
 router.register('/projects', renderProjectList);
 router.register('/project', renderProjectDetail);
+router.register('/project/telemetry', (params) => renderProjectTelemetry(params.get('id')));
 
 router.init();
